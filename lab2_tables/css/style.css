@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     border: 1px solid #000;
     border-right: none;
+    margin: 0 30px 40px 0;
 }
 
 .row {
@@ -27,5 +28,21 @@
 
 .cell-block {
     width: calc(100% / 7);
+    border-bottom: none;
+}
+
+.cell-bottom{
+    width: calc(100% / 7);
+    border-bottom: 1px solid #000;
+}
+
+.cell-block4{
+    width: calc(100% / 7);
+}
+.cell3{
+    flex-basis: calc(100%/3);
+}
+.cell-last{
+    flex-grow: 1;
     border-bottom: none;
 }
