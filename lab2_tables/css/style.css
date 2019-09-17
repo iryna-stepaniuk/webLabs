@@ -1,11 +1,31 @@
 .container {
-    width: 450px;
+    width: 570px;
     display: flex;
     flex-wrap: wrap;
+    border: 1px solid #000;
+    border-right: none;
 }
 
-.item {
-    width: 60px;
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+
+.cell {
+    border: 1px solid #000;
     height: 20px;
-    border: 1px solid black;
+    border-top: none;
+    border-left: none;
+    box-sizing: border-box;
+}
+
+.cell-grow {
+    flex-grow: 1;
+}
+
+.cell-block {
+    width: calc(100% / 7);
+    border-bottom: none;
 }
