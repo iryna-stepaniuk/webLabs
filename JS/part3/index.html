@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part3</title>
+    <script language="JavaScript">
+        function maxval(obj) {
+            var a = Number(obj.num1.value);
+            var b = Number(obj.num2.value);
+            var c = Number(obj.num3.value);
+            var m = a
+            if (b > m) m = b
+            if (c > m) m = c
+            obj.res.value = m
+        }
+    </script>
+    <script language="JavaScript">
+        function maxval1(obj) {
+            var a = Number(obj.num11.value);
+            var b = Number(obj.num12.value);
+            var c = Number(obj.num13.value);
+            var d = Number(obj.num14.value);
+            obj.res1.value = Math.max(Math.max(a, b), Math.max(c, d))
+        }
+    </script>
+</head>
+<body>
+<h3>1.Приклади із лабораторної роботи</h3>
+<p>Обчислення максимального значення із трьох заданих</p>
+<FORM name="form1">
+    Число 1: <input type="text" size=8 name="num1"><br>
+    Число 2: <input type="text" size=8 name="num2"><br>
+    Число 3: <input type="text" size=8 name="num3"><br>
+    Максимальне значення = <input type="text" size=8 name="res"><br>
+    <input type="button" value="Визначити" onClick="maxval(form1)">
+    <input type="reset">
+</FORM>
+<p>Обчислення максимального значення із чотирьох заданих</p>
+<FORM name="form2">
+    Число 1: <input type="text" size=8 name="num11"><br>
+    Число 2: <input type="text" size=8 name="num12"><br>
+    Число 3: <input type="text" size=8 name="num13"><br>
+    Число 4: <input type="text" size=8 name="num14"><br>
+    Максимальне значення = <input type="text" size=8 name="res1"><br>
+    <input type="button" value="Визначити" onClick="maxval1(form2)">
+    <input type="reset">
+</FORM>
+<br><br>
+<a href="tasks.html">Завдання</a>
+</body>
+</html>

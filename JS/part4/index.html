@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part4</title>
+    <script>
+        function chan(obj) {
+            var r1 = Number(obj.a1.value)
+            var r2 = Number(obj.a2.value)
+            if ((r1 < 1) || (r1 > 3) || (r2 < 1) || (r2 > 3))
+                alert("Неправильно задані номери зображень!")
+            else {
+                var z = document.images[r1 - 1].src
+                document.images[r1 - 1].src = document.images[r2 - 1].src;
+                document.images[r2 - 1].src = z
+            }
+        }
+    </script>
+    <script language="JavaScript">
+        function img(n, action) {
+            if (action) {
+                document.images[n - 1].src = "img/wpch" + n + ".gif"
+            } else {
+                document.images[n - 1].src = "img/pch" + n + ".gif"
+            }
+        }
+    </script>
+</head>
+<body>
+<h3>1.Перевірити приклади лабораторної роботи</h3>
+<CENTER>
+    <p>Галерея малюнків</p>
+    <IMG src="img/pic1.jpg" width="90" name="pic1" alt="pic1">
+    <IMG src="img/pic2.jpg" width="90" name="pic2" alt="pic2">
+    <IMG src="img/pic3.jpg" width="90" name="pic3" alt="pic3"> <br>
+    <FORM name=form1>
+        Зображення з номерами<br>
+        <input type="text" name="a1" size=1> і
+        <input type="text" name="a2" size=1>
+        <P>
+            <input type="button" value=" Переставити" onClick="chan(form1)">
+    </FORM>
+</CENTER>
+<H2>Зміст</H2>
+<A href="img/wpch4.gif" onmouseover="img(4,1)" onmouseout="img(4,0)">
+    <IMG src="img/pch4.gif" аlt="пункт 1" border="0" width="200"
+         height="50"></A><br>
+<A href="img/wpch5.gif" onmouseover="img(5,1)" onmouseout="img(5,0)">
+    <IMG src="img/pch5.gif" аlt=" пункт 1" border="0" width="200"
+         height="50"></A><br>
+<A href="img/wpch6.gif" onmouseover="img(6,1)" onmouseout="img(6,0)">
+    <IMG src="img/pch6.gif" аlt=" пункт 1" border="0" width="200"
+         height="50"></A><br>
+<br><br>
+<a href="tasks.html">Завдання</a>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part5</title>
+    <script>
+        function HrStyle(obj) {
+            let Hr=document.getElementById("hr")
+            if (obj.elements[0].checked) {Hr.style.borderWidth=obj.elements[0].value+"px"}
+            else Hr.style.borderWidth=obj.elements[1].value+"px"
+            if (obj.elements[2].checked) Hr.style.marginTop=obj.elements[2].value+"px"
+            else Hr.style.marginTop=obj.elements[3].value+"px"
+        }
+    </script>
+    <script language="JavaScript">
+        function questionnaire(obj) {
+            if (obj.elements[0].checked) obj.resSex.value = obj.elements[0].value
+            else obj.resSex.value = obj.elements[1].value
+            obj.resAge.value = obj.elements[2].value
+            if (obj.elements[3].checked) obj.resStatus.value = obj.elements[3].value
+            else obj.resStatus.value = obj.elements[4].value
+        }
+    </script>
+</head>
+<body>
+<h3>2.Продемонструвати зміну розмірів і положення на сторінці горизонтальної лінії (тега hr)</h3>
+<FORM name="form1">
+    Оберіть значення параметрів і натисніть кнопку Переглянути.<br>
+    Розміри:
+    <input type="radio" name="size" checked value="2" onclick="HrStyle(form1)"> small
+    <input type="radio" name="size" value="20" onclick="HrStyle(form1)"> big
+    <br>
+    Положення:
+    <input type="radio" name="pos" checked value="5" onclick="HrStyle(form1)"> up
+    <input type="radio" name="pos" value="80" onclick="HrStyle(form1)"> down
+    <br>
+    <hr id="hr" noshade>
+    <br><br>
+</FORM>
+<h3>3.Анкета, що визначає стать, вік, сімейне положення особи, і передає ці дані в скрипт</h3>
+<form name="form2">
+    Вкажіть свою стать:
+    <pre>
+        <input type="radio" name="sex" checked value="male"> чоловіча
+        <input type="radio" name="sex" value="female"> жіноча
+    </pre>
+    Вкажіть свій вік:
+    <pre>
+        <input type="text" name="age" size="5">
+    </pre>
+    Вкажіть своє сімейне положення:
+    <pre>
+        <input type="radio" name="status" checked value="single"> не заміжня/не одружений
+        <input type="radio" name="status" value="married"> заміжня/одружений
+    </pre>
+    <input type="button" value="Підтвердити" onclick="questionnaire(form2)"><br>
+    Sex: <input type="text" size="10" name="resSex"><br>
+    Age: <input type="text" size="10" name="resAge"><br>
+    Status: <input type="text" size="10" name="resStatus"><br>
+</form>
+</body>
+</html>

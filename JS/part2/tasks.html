@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>part2</title>
+    <script>
+        function square_triangle(obj,x1,y1,x2,y2,x3,y3) {
+            obj.res.value=Math.abs(0.5*(x1*y2+x2*y3+x3*y1-y1*x2-y2*x3-y3*x1))
+        }
+    </script>
+    <script>
+        function distance(obj,x,y) {
+            obj.res.value=Math.sqrt(Math.pow(x,2)+Math.pow(y,2))
+        }
+    </script>
+    <script>
+        function swap(obj) {
+            var c=Number(obj.a.value)
+            obj.a.value=Number(obj.b.value)
+            obj.b.value=c
+        }
+    </script>
+</head>
+
+<body>
+<h3>2.Обчислення площі трикутника (використовуючи подію focus) за заданими координатами трьох точок на площині</h3>
+<FORM name="form1">
+    Перша точка: x:<input type="text" size=5 name="num1x"> y:<input type="text" size=5 name="num1y"><br>
+    Друга точка: x:<input type="text" size=5 name="num2x"> y:<input type="text" size=5 name="num2y"><br>
+    Третя точка: x:<input type="text" size=5 name="num3x"> y:<input type="text" size=5 name="num3y"><br>
+    Площа трикутника:
+    <input type="text" size=7 name="res"
+           onfocus="square_triangle(form1,document.form1.num1x.value, document.form1.num1y.value,
+                             document.form1.num2x.value, document.form1.num2y.value, document.form1.num3x.value,
+                             document.form1.num3y.value)" ><br>
+</FORM>
+<h3>3.Для точки, заданої координатами на площині, визначити відстань до початку координат (використовуючи подію select)</h3>
+<FORM name="form2">
+    x:  <input type="text" size=5 name="x"><br>
+    y:  <input type="text" size=5 name="y"><br>
+    Відстань до початку координат:
+    <input type="text" size=7 name="res"
+           onselect="distance(form2,document.form2.x.value, document.form2.y.value)" ><br>
+</FORM>
+<h3>4.Обміняти місцями значення двох введених змінних (використовуючи подію blur)</h3>
+<FORM name="form3">
+    a:  <input type="text" size=5 name="a"><br>
+    b:  <input type="text" size=5 name="b" onBlur="swap(form3)"><br>
+    <input type="reset" value=Оновити>
+</FORM>
+</body>
+</html>

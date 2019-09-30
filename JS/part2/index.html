@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Обробка значень із форми</title>
+    <script language="JavaScript">
+        function square (a, h){
+            var s=(a*h)/2;
+            document.write ("Площа прямокутного трикутника = ",s);
+            return s
+        }
+    </script>
+    <script>
+        function square_rec(obj)
+        {obj.res.value=obj.num1.value* obj.num1.value}
+    </script>
+</head>
+
+<body>
+<h3>1.Приклади з лабораторної роботи</h3>
+<P>Площа прямокутного трикутника</P>
+<FORM name="form1">
+    Основа: <input type="text" size=5 name="param1"><br>
+    Висота: <input type="text" size=5 name="param2"><br>
+    <input type="button" value=Обчислити
+           onClick="square(document.form1.param1.value, document.form1.param2.value)">
+</FORM>
+<br><br>
+<P>Обчислення площі квадрата</P>
+<FORM name="form2">
+    Сторона: <input type="text" size=7 name="num1"
+                    onChange="square_rec(form2)"><br>
+    Площа квадрата: <input type="text" size=7 name="res"><br>
+    <input type="reset" value=Оновити>
+</FORM>
+<br><br>
+<a href="tasks.html">Завдання</a>
+</body>
+</html>

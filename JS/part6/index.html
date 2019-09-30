@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part6</title>
+    <script>
+        var s = "Baм подобається: \r\n"
+
+        function set(vch) {
+            s = s + vch + "\r\n";
+            document.form1.area.value = s
+        }
+    </script>
+    <script language="JavaScript">
+        function grant() {
+            var d = document
+            var k = 0;
+            if ((d.form2.elements[0]).checked)
+                k = k + Number(d.form2.elements[0].value)
+            if ((d.form2.elements[1]).checked)
+                k = k + Number(d.form2.elements[1].value)
+            if ((d.form2.elements[2]).checked)
+                k = k + Number(d.form2.elements[2].value)
+            form2.ww.value = "Ваша винагорода " + k + " y.e."
+        }
+    </script>
+</head>
+<body>
+<h3>1. Перевірити приклади із лабораторної роботи</h3>
+<CENTER>
+    <p align="center">Анкета</p>
+    <FORM name="form0">
+        <H4>Введіть назву улюбленого журнала чи газети</H4>
+        <input type="text" name="n1" size=45><br>
+    </FORM>
+    <FORM name="form1">
+        <H4>Що вам подобається у виданні?</H4>
+        <TABLE border=3 align=center>
+            <TR>
+                <TD><input type="checkbox" name="m1" value="Стиль подачі матеріалу"
+                           onClick="set(form1.elements[0].value)">
+                    Стиль подачі материалу<br>
+                    <input type="checkbox" name="m2" value="Достовірність інформації"
+                           onClick="set(form1.elements[1].value)">
+                    Достовірність інформації<br>
+                    <input type="checkbox" name="m3" value="Дизайн і оформлення"
+                           onClick="set(form1.elements[2].value)">
+                    Дизайн і оформлення<br>
+                </TD>
+            </TR>
+        </TABLE>
+        <textarea name="area" cols=35 rows=7> </textarea><br>
+        <input type="reset" value="Скасувати"
+               onclick="s='Bac приваблює: \r\n'">
+    </FORM>
+</CENTER>
+<h3>Анкета перекладача</h3>
+Вкажіть ті мови, якими Ви володієте: <br>
+<FORM name="form2">
+    <input type="checkbox" name="lan" value=100>українська<br>
+    <input type="checkbox" name="lan" value=200>англійська<br>
+    <input type="checkbox" name="lan" value=300>китайська<br>
+    <input type="button" value="Винагорода" onClick="grant()">
+    <hr>
+    <input type="Text" size=50 name="ww" value=""><br>
+    <input type="reset" value="Скасувати">
+</FORM>
+<br>
+<a href="tasks.html">Завдання</a>
+</body>
+</html>

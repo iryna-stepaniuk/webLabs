@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part3</title>
+    <script language="JavaScript">
+        function maxval(obj) {
+            var a = Number(obj.num1.value);
+            var b = Number(obj.num2.value);
+            var c = Number(obj.num3.value);
+            var d = Number(obj.num4.value);
+            var e = Number(obj.num5.value);
+            var m=Math.max(Math.max(Math.max(a,b),Math.max(c,d)),e)
+            obj.res.value = m
+            var k=0
+            if (a==m) k=k+1
+            if (b==m) k=k+1
+            if (c==m) k=k+1
+            if (d==m) k=k+1
+            if (e==m) k=k+1
+            obj.num.value=k
+        }
+    </script>
+    <script language="JavaScript">
+        function triangle(obj) {
+            var a = Number(obj.a.value);
+            var b = Number(obj.b.value);
+            var c = Number(obj.c.value);
+            if (a<b+c && b<a+c && c<a+b) obj.res1.value = "можна"
+            else obj.res1.value = "не можна"
+        }
+    </script>
+    <script language="JavaScript">
+        function quadrant(obj) {
+            var x = Number(obj.x.value);
+            var y = Number(obj.y.value);
+            if (x>=0) {if (y>=0) obj.res2.value="1"; else obj.res2.value="4"}
+            else {if (y>=0) obj.res2.value="2"; else obj.res2.value="3"}
+        }
+    </script>
+</head>
+<body>
+<h3>2.Визначення кількості максимальних чисел для введеної послідовності із п’яти чисел</h3>
+<FORM name="form1">
+    Число 1: <input type="text" size=8 name="num1"><br>
+    Число 2: <input type="text" size=8 name="num2"><br>
+    Число 3: <input type="text" size=8 name="num3"><br>
+    Число 4: <input type="text" size=8 name="num4"><br>
+    Число 5: <input type="text" size=8 name="num5"><br>
+    Максимальне значення = <input type="text" size=8 name="res"><br>
+    К-сть максимальних чисел = <input type="text" size="8" name="num"><br>
+    <input type="button" value="Визначити" onClick="maxval(form1)">
+    <input type="reset">
+</FORM>
+<h3>3.Визначення можливості побудови трикутника із заданими довжинами сторін</h3>
+<FORM name="form2">
+    Сторона a: <input type="text" size=8 name="a"><br>
+    Сторона b: <input type="text" size=8 name="b"><br>
+    Сторона c: <input type="text" size=8 name="c"><br>
+    Можна побудувати трикутник? <input type="text" size=8 name="res1"><br>
+    <input type="button" value="Визначити" onClick="triangle(form2)">
+    <input type="reset">
+</FORM>
+<h3>4.Встановити, до якої із чвертей системи координат належить точка, задана координатами на площині</h3>
+<FORM name="form3">
+    x: <input type="text" size="5" name="x"><br>
+    y: <input type="text" size="5" name="y"><br>
+    Чверть: <input type="text" size="5" name="res2"><br>
+    <input type="button" value="Визначити" onClick="quadrant(form3)">
+    <input type="reset">
+</FORM>
+</body>
+</html>

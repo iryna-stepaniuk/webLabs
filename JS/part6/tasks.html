@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part6</title>
+    <script language="JavaScript">
+        function fee() {
+            var d = document
+            var k = 0;
+            if ((d.form2.elements[0]).checked)
+                k = k + Number(d.form2.elements[0].value)
+            if ((d.form2.elements[1]).checked)
+                k = k + Number(d.form2.elements[1].value)
+            if ((d.form2.elements[2]).checked)
+                k = k + Number(d.form2.elements[2].value)
+            form2.ww.value = "Ваша винагорода " + k + " y.e."
+        }
+    </script>
+</head>
+<body>
+<h3>2.Обробка анкети слухача курсів. Користувач може обрати із списку курсів конкретний курс, його тривалість,
+    мову роботи з викладачем, форму звітності. Залежно від цих параметрів визначається вартість
+    окремого курсу і вартість всього навчання. </h3>
+<p>Анкета</p>
+<FORM name="form1">
+    <pre><input type="checkbox" name="course">Introduction to C++<br>
+        Тривалість курсу:
+        <input type="radio" name="time" value=""><br>
+        <input type="radio" name="time" value=""><br>
+        Мова роботи з викладачем:
+        <input type="radio" name="lang" value=""><br>
+        <input type="radio" name="lang" value=""><br>
+        <input type="radio" name="lang" value=""><br>
+        Форма звітності:
+        <input type="radio" name="report" value=""><br>
+        <input type="radio" name="report" value=""><br>
+    </pre>
+    <pre><input type="checkbox" name="course">HTML5 and CSS Fundamentals<br>
+        Тривалість курсу:
+        <input type="radio" name="time" value=""><br>
+        <input type="radio" name="time" value=""><br>
+        Мова роботи з викладачем:
+        <input type="radio" name="lang" value=""><br>
+        <input type="radio" name="lang" value=""><br>
+        <input type="radio" name="lang" value=""><br>
+        Форма звітності:
+        <input type="radio" name="report" value=""><br>
+        <input type="radio" name="report" value=""><br>
+        </pre>
+    <pre><input type="checkbox" name="course">Cybersecurity Fundamentals<br>
+        Тривалість курсу:
+        <input type="radio" name="time" value=""><br>
+        <input type="radio" name="time" value=""><br>
+        Мова роботи з викладачем:
+        <input type="radio" name="lang" value=""><br>
+        <input type="radio" name="lang" value=""><br>
+        <input type="radio" name="lang" value=""><br>
+        Форма звітності:
+        <input type="radio" name="report" value=""><br>
+        <input type="radio" name="report" value=""><br>
+    </pre>
+    <input type="button" value="Розрахувати" onClick="fee()">
+    <hr>
+    <textarea name="area" cols=35 rows=7> </textarea><br>
+    <input type="reset" value="Скасувати">
+</FORM>
+</body>
+</html>

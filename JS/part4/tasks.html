@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part4</title>
+    <script language="JavaScript">
+        function img(n) {
+            document.images[3].src = "img/pic" + n + ".jpg"
+        }
+    </script>
+    <script language="JavaScript">
+        function scale(n) {
+            if (n)
+            {
+                document.images[4].width = document.images[4].width + 50
+                document.images[4].height = document.images[4].height + 50
+            }
+            else  { document.images[4].width = document.images[4].width - 50
+                document.images[4].height = document.images[4].height - 50
+            }
+        }
+    </script>
+    <script language="JavaScript">
+        function pointer(n,action) {
+            if (action) document.images[n-3].src ="img/pointer.png"
+            else document.images[n-3].src = "img/white.jpg"
+        }
+    </script>
+</head>
+<body>
+<h3>2.Вибір із трьох зображень одного, яке вставляється нижче цих трьох</h3>
+<center>
+    <IMG src="img/pic1.jpg" аlt="pic1" width="150" height="150" onclick="img(1)">
+    <IMG src="img/pic2.jpg" аlt="pic2" width="150" height="150" onclick="img(2)">
+    <IMG src="img/pic3.jpg" аlt="pic3" width="150" height="150" onclick="img(3)">
+<br>
+<img src="img/pic1.jpg" alt="pic" width="150" height="150"></center>
+<h3>3.Картинка з "ефектом наближення", тобто збільшення розмірів як реакція на попадання курсора в поле зображення
+    (використовуючи властивості width і height)</h3>
+<center>
+    <IMG src="img/pch4.gif" аlt="pic" width="150"
+         height="150" onmouseover="scale(1)" onmouseout="scale(0)"><br><br>
+</center>
+<h3>4.Графічне горизонтальне меню з появою стрілки над пунктом, на який наведено курсор</h3>
+<img src="img/white.jpg" width="150" height="150">
+<img src="img/white.jpg" width="150" height="150">
+<img src="img/white.jpg" width="150" height="150"> <br>
+    <IMG src="img/wpch4.gif" аlt="pic" width="150" height="150" onmouseover="pointer(8,1)" onmouseout="pointer(8,0)">
+    <IMG src="img/wpch5.gif" аlt="pic" width="150" height="150" onmouseover="pointer(9,1)" onmouseout="pointer(9,0)">
+    <IMG src="img/wpch6.gif" аlt="pic" width="150" height="150" onmouseover="pointer(10,1)" onmouseout="pointer(10,0)">
+<br><br>
+</body>
+</html>
