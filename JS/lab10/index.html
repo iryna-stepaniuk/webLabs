@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part10</title>
+    <script language="JavaScript">
+        function ttest(s){
+            var sres="Прочитаний текст:" + " \r\n" + s + "\r\n" +
+                'Текст в стовпчик:' + "\r\n"
+            var cur=""
+            for ( var i=0; i <= s.length-1; i += 1){
+                c=s.charAt(i); cur +=c+"\r\n"
+            }
+            sres+=cur
+            return sres
+        }
+    </script>
+    <script language="JavaScript">
+        function numword(obj){
+            var h=obj.data.value
+            var s=obj.textin.value
+            s=' '+s+' '
+            h=' '+h+' '
+            var m=h.length
+            var res=0
+            var i=0
+            while (i <= s.length-1){
+                ch=s.substr(i,m)
+                if (ch==h) { res+=1 ; i = i+m-1 }else{ i++ }
+            }
+            obj.result.value=res
+        }
+    </script>
+</head>
+<body>
+<h4>Вивід символів рядка в стовпчик</h4>
+<FORM name="form1">
+    Введіть рядок: <input type="text" size=30 name="st1"><hr>
+    <input type="button" value="Bикoнати"
+           onClick="form1.res.value=ttest(form1.st1.value)">
+    <input type="reset" value=Скасувати><hr>
+    <textarea cols=60 rows=20 name= res></textarea>
+</FORM>
+<h4> Кількість слів у тексті </h4>
+<FORM name="form2">
+    Введіть текст:<br>
+    <textarea name="textin" rows=4 cols=20></textarea><hr>
+    Введіть слово: <input type="text" name="data" size="8"><hr>
+    <input type="button" value="Обчислити"
+           onClick="numword(form2)"><hr>
+    Кількість слів у тексті: <input type="text" name="result" size=8><hr>
+    <input type="reset" value="Скасувати">
+</FORM>
+<br><br>
+<a href="tasks.html">Завдання</a>
+</body>
+</html>

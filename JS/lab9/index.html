@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part9</title>
+    <script language="JavaScript">
+        function c1(obj){
+            var t=new Date()
+            var h=t.getHours()
+            var m=t.getMinutes()
+            var s=t.getSeconds()
+            var res=""
+            if (h < 10){ res += "0" + h } else { res += h}
+            if (m < 10){ res += ":0"+m } else { res += ":"+m}
+            if (s < 10){ res += ":0" + s } else { res += ":"+s}
+            obj.rest.value = res
+        }
+    </script>
+    <script language="JavaScript">
+        function def13(obj){
+            var t= new Date()
+            var c=""
+            var y=Number(obj.fye.value)
+            for (var i=0;i<=11;i++){
+                t.setYear(y)
+                t.setMonth(i)
+                t.setDate(13)
+                if (t.getDay()==5){
+                    с = c+ fmon(i)+ "\r\n"
+                }
+            }
+            obj.res.value = с
+        }
+        function fmon(mont){
+            var s
+            switch (mont){
+                case 0: s="січень"; break;
+                case 1: s="лютий"; break;
+                case 2: s="березень"; break;
+                case 3: s="квітень"; break;
+                case 4: s="травень"; break;
+                case 5: s="червень"; break;
+                case 6: s="липень"; break;
+                case 7: s="серпень"; break;
+                case 8: s="вересень"; break;
+                case 9: s="жовтень"; break;
+                case 10: s="листопад"; break;
+                case 11: s="грудень"; break;
+            }
+            return s
+        }
+    </script>
+
+</head>
+<body>
+При натисканні кнопки <b>Час</b> ви дізнаєтесь поточний час
+<FORM name="form1">
+    <input type="button" name=butt value="Час" onClick="c1(form1)">
+    <input type="text" size=10 name="rest"><br>
+</FORM>
+<h4> В які місяці року 13 число – п’ятниця?</h4>
+<FORM name="form2">
+    Вкажіть рік: <input type="text" size=8 name="fye" >
+    <input type="button" value="Знaйти" onClick="def13(form2)"><br>
+    <textarea Cols=30 rows=10 name=res></textarea><br>
+    <input type="reset" value="Скасувати">
+</FORM>
+<br><br>
+<a href="tasks.html">Завдання</a>
+</body>
+</html>

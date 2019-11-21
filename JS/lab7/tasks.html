@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Part7</title>
+    <script language="JavaScript">
+        var s=""
+        var sum1=0
+        function gr(obj,m){
+            var r=100*(Number(((obj.elements[0])[m]).value)+1)
+            s+=((obj.elements[0])[m]).text + " x" + obj.kol.value + "\r\n"
+            obj.restext.value=s
+            sum1+=obj.kol.value*r
+            obj.res.value=r
+        }
+    </script>
+    <script>
+        selected = -1
+
+        function chclr(clr)
+        {
+            d = document
+            if (selected != -1)
+                d.getElementById("maintbl").getElementsByTagName("td")[selected].style.backgroundColor = clr
+            else
+                for (i=0; i<d.getElementById("maintbl").getElementsByTagName("td").length; i++)
+                    d.getElementById("maintbl").getElementsByTagName("td")[i].style.backgroundColor = clr
+        }
+        function chimg(img)
+        {
+            d = document
+            if (selected != -1)
+                d.getElementById("maintbl").getElementsByTagName("td")[selected].innerHTML = "<img src='"+img+".png' width='50px' height='50px'>"
+            else
+                for (i=0; i<d.getElementById("maintbl").getElementsByTagName("td").length; i++)
+                    d.getElementById("maintbl").getElementsByTagName("td")[i].innerHTML = "<img src='"+img+".png' width='50px' height='50px'>"
+        }
+        function clearall() {
+            d = document
+            for (i=0; i<d.getElementById("maintbl").getElementsByTagName("td").length; i++) {
+                d.getElementById("maintbl").getElementsByTagName("td")[i].innerHTML = ""
+                d.getElementById("maintbl").getElementsByTagName("td")[i].style.backgroundColor = "silver"
+            }
+            selected = -1
+        }
+        function changeselection(ind) {
+            d = document
+            row = ind.parentNode.rowIndex
+            colcount = d.getElementById("maintbl").getElementsByTagName("td").length/d.getElementById("maintbl").getElementsByTagName("tr").length
+            selected = row*colcount + ind.cellIndex
+            for (i=0; i<d.getElementById("maintbl").getElementsByTagName("td").length; i++)
+                d.getElementById("maintbl").getElementsByTagName("td")[i].style.borderColor = ""
+            d.getElementById("maintbl").getElementsByTagName("td")[selected].style.borderColor = "blue"
+        }
+    </script>
+    <style>
+        td {
+            min-width: 50px;
+            min-height: 50px;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<h3>2. Написати сценарій, який дозволяє вибрати для таблиці і її комірок або
+    колір фону, або фонове зображення, або і те і інше. Передбачити можливість
+    задання свого кольору фону для кожної комірки</h3>
+<FORM name="test">
+    <TABLE border=3 cellpadding=5
+           cellspacing=6 bgcolor=silver>
+        <TR>
+            <th>Колір</th>
+            <th>Зображення</th>
+        <TR><TD>
+            <select size=5 name="clr"
+                    onChange="chclr(test.clr.value)">
+                <option value="red">Червоний<br>
+                <option value="green" >Зелений<br>
+                <option value="yellow">Жовтий<br>
+                <option value="white">Білий<br>
+                <option value="black">Чорний<br>
+                <option value="pink">Рожевий<br>
+                <option value="blue">Блакитний<br>
+            </select>
+        </TD>
+            <TD>
+                <select size=3 name="img" onChange="chimg(test.img.value)">
+                    <option value="img1">Кіт<br>
+                    <option value="img2">Собака<br>
+                    <option value="img3">Природа<br>
+                </select>
+            </TD></TR>
+    </TABLE>
+    <br>
+    <TABLE id="maintbl" border=3 cellpadding=5 cellspacing=6 bgcolor="silver">
+        <tr>
+            <td onclick="changeselection(this)"></td>
+            <td onclick="changeselection(this)"></td>
+            <td onclick="changeselection(this)"></td>
+            <td onclick="changeselection(this)"></td>
+        </tr>
+        <tr>
+            <td onclick="changeselection(this)"></td>
+            <td onclick="changeselection(this)"></td>
+            <td onclick="changeselection(this)"></td>
+            <td onclick="changeselection(this)"></td>
+        </tr>
+        <tr>
+            <td onclick="changeselection(this)"></td>
+            <td onclick="changeselection(this)"></td>
+            <td onclick="changeselection(this)"></td>
+            <td onclick="changeselection(this)"></td>
+        </tr>
+    </TABLE>
+    <p>
+            <input type="reset" value= "Оновити" onClick="clearall()">
+    </p>
+</FORM>
+
+<h3>3. Написати сценарій, який обчислить вартість майбутньої покупки для
+    заданого списку продуктів, ціни за одиницю товару і кількість екземплярів</h3>
+<form name="form2">
+    <h3>Список продуктів</h3>
+    <TABLE border=3>
+        <TR><TH>Продукт</TH><TH>Куплені товари</TH></TR>
+        <TR>
+            <TD valign=top>
+                <select name="data" size=5 onChange="gr(form2,form2.data.value)">
+                    <option value=0>банан
+                    <option value=1>сік
+                    <option value=2>шоколад
+                    <option value=3>кальмар
+                    <option value=4>м'ясо
+                </select><P>
+                кількість: <input type="text" name="kol" size=5> <br>
+                <input type="text" name="res" size=15>
+            </TD>
+            <TD><TEXTAREA name="restext" cols=15 rows=6>
+ </TEXTAREA><P>
+                <input type="button" value="Сума" onClick="form2.resgr.value=sum1">
+                <input type="text" name="resgr" size=10>
+            </TD></TR></TABLE><p>
+    <input type="reset" value="Скасувати" onClick="sum1=0; s=''">
+</form>
+</body>
+</html>

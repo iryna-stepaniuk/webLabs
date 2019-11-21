@@ -4,16 +4,44 @@
     <meta charset="UTF-8">
     <title>Part6</title>
     <script language="JavaScript">
-        function fee() {
-            var d = document
-            var k = 0;
-            if ((d.form2.elements[0]).checked)
-                k = k + Number(d.form2.elements[0].value)
-            if ((d.form2.elements[1]).checked)
-                k = k + Number(d.form2.elements[1].value)
-            if ((d.form2.elements[2]).checked)
-                k = k + Number(d.form2.elements[2].value)
-            form2.ww.value = "Ваша винагорода " + k + " y.e."
+        function fee(obj) {
+            var k1=0; var k2=0;var k3 = 0;
+            obj.area.value=''
+            if (obj.course1.checked)
+            {
+                if (obj.time11.checked) k1=k1+Number(obj.time11.value)
+                if (obj.time12.checked) k1=k1+Number(obj.time12.value)
+                if (obj.lang11.checked) k1=k1+Number(obj.lang11.value)
+                if (obj.lang12.checked) k1=k1+Number(obj.lang12.value)
+                if (obj.lang13.checked) k1=k1+Number(obj.lang13.value)
+                if (obj.report11.checked) k1=k1+Number(obj.report11.value)
+                if (obj.report12.checked) k1=k1+Number(obj.report12.value)
+            }
+            if (obj.course2.checked)
+            {
+                if (obj.time21.checked) k2=k2+Number(obj.time21.value)
+                if (obj.time22.checked) k2=k2+Number(obj.time22.value)
+                if (obj.lang21.checked) k2=k2+Number(obj.lang21.value)
+                if (obj.lang22.checked) k2=k2+Number(obj.lang22.value)
+                if (obj.lang23.checked) k2=k2+Number(obj.lang23.value)
+                if (obj.report21.checked) k2=k2+Number(obj.report21.value)
+                if (obj.report22.checked) k2=k2+Number(obj.report22.value)
+            }
+            if (obj.course3.checked)
+            {
+                if (obj.time31.checked) k3=k3+Number(obj.time31.value)
+                if (obj.time32.checked) k3=k3+Number(obj.time32.value)
+                if (obj.lang31.checked) k3=k3+Number(obj.lang31.value)
+                if (obj.lang32.checked) k3=k3+Number(obj.lang32.value)
+                if (obj.lang33.checked) k3=k3+Number(obj.lang33.value)
+                if (obj.report31.checked) k3=k3+Number(obj.report31.value)
+                if (obj.report32.checked) k3=k3+Number(obj.report32.value)
+            }
+            if (k1>0) obj.area.value += "Вартість за Introduction to C++ -  " + k1 + " y.e.\n"
+            if (k2>0) obj.area.value += "Вартість за HTML5 and CSS Fundamentals -  " + k2 + " y.e.\n"
+            if (k3>0) obj.area.value += "Вартість за Cybersecurity Fundamentals -  " + k3 + " y.e.\n"
+            var sum=k1+k2+k3
+            obj.area.value += "Загальна вартість -  " + sum + " y.e."
         }
     </script>
 </head>
@@ -23,45 +51,45 @@
     окремого курсу і вартість всього навчання. </h3>
 <p>Анкета</p>
 <FORM name="form1">
-    <pre><input type="checkbox" name="course">Introduction to C++<br>
+    <pre><input type="checkbox" name="course1">Introduction to C++<br>
         Тривалість курсу:
-        <input type="radio" name="time" value=""><br>
-        <input type="radio" name="time" value=""><br>
+        <input type="radio" name="time11" value="200">3 month<br>
+        <input type="radio" name="time12" value="400">6 month<br>
         Мова роботи з викладачем:
-        <input type="radio" name="lang" value=""><br>
-        <input type="radio" name="lang" value=""><br>
-        <input type="radio" name="lang" value=""><br>
+        <input type="radio" name="lang11" value="100">Ukrainian<br>
+        <input type="radio" name="lang12" value="200">Russian<br>
+        <input type="radio" name="lang13" value="300">English<br>
         Форма звітності:
-        <input type="radio" name="report" value=""><br>
-        <input type="radio" name="report" value=""><br>
+        <input type="radio" name="report11" value="200">Online<br>
+        <input type="radio" name="report12" value="100">Offline<br>
     </pre>
-    <pre><input type="checkbox" name="course">HTML5 and CSS Fundamentals<br>
+    <pre><input type="checkbox" name="course2">HTML5 and CSS Fundamentals<br>
         Тривалість курсу:
-        <input type="radio" name="time" value=""><br>
-        <input type="radio" name="time" value=""><br>
+        <input type="radio" name="time21" value="300">3 month<br>
+        <input type="radio" name="time22" value="200">6 mont<br>
         Мова роботи з викладачем:
-        <input type="radio" name="lang" value=""><br>
-        <input type="radio" name="lang" value=""><br>
-        <input type="radio" name="lang" value=""><br>
+        <input type="radio" name="lang21" value="100">Ukrainian<br>
+        <input type="radio" name="lang22" value="200">Russian<br>
+        <input type="radio" name="lang23" value="300">English<br>
         Форма звітності:
-        <input type="radio" name="report" value=""><br>
-        <input type="radio" name="report" value=""><br>
+        <input type="radio" name="report21" value="150">Online<br>
+        <input type="radio" name="report22" value="100">Offline<br>
         </pre>
-    <pre><input type="checkbox" name="course">Cybersecurity Fundamentals<br>
+    <pre><input type="checkbox" name="course3">Cybersecurity Fundamentals<br>
         Тривалість курсу:
-        <input type="radio" name="time" value=""><br>
-        <input type="radio" name="time" value=""><br>
+        <input type="radio" name="time31" value="250">2 month<br>
+        <input type="radio" name="time32" value="450">4 month<br>
         Мова роботи з викладачем:
-        <input type="radio" name="lang" value=""><br>
-        <input type="radio" name="lang" value=""><br>
-        <input type="radio" name="lang" value=""><br>
+        <input type="radio" name="lang31" value="100">Ukrainian<br>
+        <input type="radio" name="lang32" value="200">Russian<br>
+        <input type="radio" name="lang33" value="300">English<br>
         Форма звітності:
-        <input type="radio" name="report" value=""><br>
-        <input type="radio" name="report" value=""><br>
+        <input type="radio" name="report31" value="200">Online<br>
+        <input type="radio" name="report32" value="150">Offline<br>
     </pre>
-    <input type="button" value="Розрахувати" onClick="fee()">
+    <input type="button" value="Розрахувати" onClick="fee(form1)">
     <hr>
-    <textarea name="area" cols=35 rows=7> </textarea><br>
+    <textarea name="area" cols=55 rows=7> </textarea><br>
     <input type="reset" value="Скасувати">
 </FORM>
 </body>

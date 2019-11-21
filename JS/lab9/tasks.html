@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part9</title>
+    <script language="JavaScript">
+        function week(obj) {
+            var d=new Date(obj.year.value,obj.month.value - 1, obj.number.value)
+            var d1=new Date(obj.year.value,0,1)
+            var t=d.getTime()-d1.getTime()
+            obj.answ.value=Math.trunc(t/604800000)+1
+        }
+    </script>
+    <script>
+        function zodiak(obj) {
+            var answ=" "
+            var d=new Date(obj.year.value,obj.month.value - 1, obj.number.value)
+            switch (d.getMonth())
+            {
+                case 0:
+                    if (d.getDate()<20) answ+="Козеріг"
+                    else answ+="Водолій"
+                    break;
+                case 1:
+                    if (d.getDate()<19) answ+="Водолій"
+                    else answ+="Риби"
+                    break;
+                case 2:
+                    if (d.getDate()<21) answ+="Риби"
+                    else answ+="Овен"
+                    break;
+                case 3:
+                    if (d.getDate()<20) answ+="Овен"
+                    else answ+="Телець"
+                    break;
+                case 4:
+                    if (d.getDate()<21) answ+="Телець"
+                    else answ+="Близнюки"
+                    break;
+                case 5:
+                    if (d.getDate()<21) answ+="Близнюки"
+                    else answ+="Рак"
+                    break;
+                case 6:
+                    if (d.getDate()<23) answ+="Рак"
+                    else answ+="Лев"
+                    break;
+                case 7:
+                    if (d.getDate()<23) answ+="Лев"
+                    else answ+="Діва"
+                    break;
+                case 8:
+                    if (d.getDate()<23) answ+="Діва"
+                    else answ+="Ваги"
+                    break;
+                case 9:
+                    if (d.getDate()<23) answ+="Ваги"
+                    else answ+="Скорпіон"
+                    break;
+                case 10:
+                    if (d.getDate()<22) answ+="Скорпіон"
+                    else answ+="Стрілець"
+                    break;
+                case 11:
+                    if (d.getDate()<22) answ+="Стрілець"
+                    else answ+="Козеріг"
+                    break;
+            }
+            obj.answer.value=answ
+        }
+    </script>
+    <script>
+        function Year(obj) {
+            var answ=" "
+            var d=new Date(obj.year.value,obj.month.value - 1, obj.number.value)
+            switch (d.getFullYear() % 10)
+            {
+                case 0:
+                    answ+="білий"+"  "
+                    break;
+                case 1:
+                    answ+="білий"+"  "
+                    break;
+                case 2:
+                    answ+="чорний"+"  "
+                    break;
+                case 3:
+                    answ+="чорний"+"  "
+                    break;
+                case 4:
+                    answ+="зелений"+"  "
+                    break;
+                case 5:
+                    answ+="зелений"+"  "
+                    break;
+                case 6:
+                    answ+="червоний"+"  "
+                    break;
+                case 7:
+                    answ+="червоний"+"  "
+                    break;
+                case 8:
+                    answ+="жовтий"+"  "
+                    break;
+                case 9:
+                    answ+="жовтий"+"  "
+                    break;
+            }
+            switch (d.getFullYear()%12)
+            {
+                case 4:
+                    answ += "пацюк"
+                    break;
+                case 5:
+                    answ += "корова"
+                    break;
+                case 6:
+                    answ += "тигр"
+                    break;
+                case 7:
+                    answ += "заєць"
+                    break;
+                case 8:
+                    answ += "дракон"
+                    break;
+                case 9:
+                    answ += "змія"
+                    break;
+                case 10:
+                    answ += "кінь"
+                    break;
+                case 11:
+                    answ += "вівця"
+                    break;
+                case 0:
+                    answ += "мавпа"
+                    break;
+                case 1:
+                    answ += "курка"
+                    break;
+                case 2:
+                    answ += "собака"
+                    break;
+                case 3:
+                    answ += "свиня"
+                    break;
+            }
+            obj.answer.value=answ
+        }
+    </script>
+</head>
+<body>
+<h3>2. Написати сценарій, який за заданою датою визначає номер тижня в
+    році</h3>
+<form name="form1">
+    Введіть число: <input type="text" name="number" size="5"> <br>
+    Введіть номер місяця: <input type="text" name="month" size="5"> <br>
+    Введіть рік: <input type="text" name="year" size="5"> <br>
+    <input type="button" value="Визначити" onclick="week(form1)"><br>
+    Номер тижня: <input type="text" name="answ" size="5"><br>
+</form>
+<h3>3. Написати сценарій, який за датою народження особи визначає знак
+    зодіаку</h3>
+<form name="form2">
+    Введіть число: <input type="text" name="number" size="5"> <br>
+    Введіть номер місяця: <input type="text" name="month" size="5"> <br>
+    Введіть рік: <input type="text" name="year" size="5"> <br>
+    <input type="button" value="Визначити" onclick="zodiak(form2)"><br>
+    Знак зодіаку: <input type="text" name="answer" size="7"><br>
+</form>
+<h3>4. В східному календарі є 60-річний цикл із п’яти 12-річних підциклів.
+    Підцикли позначаються кольорами: зелений, червоний, жовтий, білий, чорний.
+    В кожному підциклі роки мають назви тварин: пацюка, корови, тигра, зайця,
+    дракона, змії, коня, вівці, мавпи, курки, собаки і свині. Наприклад, 1984 рік - рік
+    зеленого пацюка - є початком чергового цикла. Написати сценарій, який за
+    заданою датою визначає назву року за східним календарем. </h3>
+<form name="form3">
+    Введіть число: <input type="text" name="number" size="5"> <br>
+    Введіть номер місяця: <input type="text" name="month" size="5"> <br>
+    Введіть рік: <input type="text" name="year" size="5"> <br>
+    <input type="button" value="Визначити" onclick="Year(form3)"><br>
+    Рік за східним календарем: <input type="text" name="answer" size="15"><br>
+</form>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part11</title>
+    <script>
+        function positive(obj) {
+            var v=new Array()
+            var s=obj.mas.value
+            var j=0
+            for (var i=0;i<s.length;i++)
+            {
+                if (s.charAt(i)!=" ")
+                {
+                    v[j]=''
+                    while (s.charAt(i)!=" " && s.charAt(i)!='')
+                    {
+                        v[j]+=s.charAt(i)
+                        i++
+                    }
+                    j++
+                }
+            }
+            var k=0
+            for (var i=0;i<j;i++)
+            {
+                if (v[i]>0) k++
+            }
+            obj.result.value=k
+        }
+    </script>
+    <script>
+        function maxnum(obj) {
+            var v=new Array()
+            var s=obj.mas.value
+            var j=0
+            for (var i=0;i<s.length;i++)
+            {
+                if (s.charAt(i)!=" ")
+                {
+                    v[j]=''
+                    while (s.charAt(i)!=" " && s.charAt(i)!='')
+                    {
+                        v[j]+=s.charAt(i)
+                        i++
+                    }
+                    j++
+                }
+            }
+            var k=v[0]
+            for (var i=0;i<j;i++)
+            {
+                if (v[i]>k) k=v[i]
+            }
+            obj.result.value=k
+        }
+    </script>
+</head>
+<body>
+<h3>3. Дано одномірний масив дійсних чисел. Написати сценарій визначення
+    кількості додатніх елементів масива</h3>
+<form name="form1">
+    Введіть масив:<br>
+    <textarea name="mas" rows=2 cols=30></textarea><hr>
+    <input type="button" value="Визначити"
+           onClick="positive(form1)"><hr>
+    Результат: <input type="text" name="result" size=8><hr>
+    <input type="reset" value="Скасувати">
+</form>
+<h3>4. Дано одномірний масив дійсних чисел. Написати сценарій пошуку
+    максимального елемента в масиві</h3>
+<form name="form2">
+    Введіть масив:<br>
+    <textarea name="mas" rows=2 cols=30></textarea><hr>
+    <input type="button" value="Визначити"
+           onClick="maxnum(form2)"><hr>
+    Результат: <input type="text" name="result" size=8><hr>
+    <input type="reset" value="Скасувати">
+</form>
+</body>
+</html>

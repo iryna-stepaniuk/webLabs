@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part10</title>
+    <script language="JavaScript">
+        function numword(obj) {
+            var s=obj.textin.value
+            var k=0
+            for (var i=0;i<s.length;i++)
+            {
+                if (s.charAt(i)==" ")
+                    k++
+            }
+            obj.result.value=k+1
+        }
+    </script>
+    <script language="JavaScript">
+        function changeword(obj) {
+            var s=obj.textin.value
+            var w1=obj.word1.value
+            var w2=obj.word2.value
+            var newtext=""
+            var i=0
+            while(i<s.length)
+            {
+                if (s.substr(i,w1.length)==w1)
+                {
+                    newtext+=w2
+                    i+=w1.length
+                }
+                else {
+                    newtext+=s.charAt(i)
+                    i+=1
+                }
+            }
+            obj.result.value=newtext
+        }
+    </script>
+    <script language="JavaScript">
+        function space(obj) {
+            var s=obj.textin.value
+            var newtext=""
+            var i=0
+            while (i<s.length-1)
+            {
+                if (s.charAt(i) == ' ' && s.charAt(i)==s.charAt(i+1)) i++
+                else { newtext+=s.charAt(i); i++}
+            }
+            newtext +=s.charAt(i)
+            obj.result.value=newtext
+        }
+    </script>
+</head>
+<body>
+<h3>2.  Слова в заданому тексті розділюються пробілами. Написати програму
+    обчислення кількості слів у тексті</h3>
+<form name="form1">
+    Введіть текст:<br>
+    <textarea name="textin" rows=4 cols=20></textarea><hr>
+    <input type="button" value="Обчислити"
+           onClick="numword(form1)"><hr>
+    Кількість слів у тексті: <input type="text" name="result" size=8><hr>
+    <input type="reset" value="Скасувати">
+</form>
+<h3>3. Написати програму, в якій всі слова K замінюються словом L, де K і L
+    - задані слова, можливо різної довжини</h3>
+<form name="form2">
+    Введіть текст:<br>
+    <textarea name="textin" rows=4 cols=20></textarea><hr>
+    Введіть слово, яке потрібно замінити: <input type="text" name="word1" size="8">
+    На слово: <input type="text" name="word2" size="8"> <hr>
+    <input type="button" value="Виконати"
+           onClick="changeword(form2)"><hr>
+    Результат: <br> <textarea name="result" rows=4 cols=20></textarea><hr>
+    <input type="reset" value="Скасувати">
+</form>
+<h3>4. Написати програму, яка замінює всі підряд ідучі пробіли на один</h3>
+<form name="form3">
+    Введіть текст:<br>
+    <textarea name="textin" rows=4 cols=20></textarea><hr>
+    <input type="button" value="Виконати"
+           onClick="space(form3)"><hr>
+    Результат: <br> <textarea name="result" rows=4 cols=20></textarea><hr>
+    <input type="reset" value="Скасувати">
+</form>
+</body>
+</html>

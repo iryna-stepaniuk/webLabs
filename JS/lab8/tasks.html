@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part8</title>
+    <script language="JavaScript">
+        function turn(obj) {
+            var num=obj.number.value
+            var r=num%10
+            var newNum=r
+            num=Math.trunc(num/10)
+            while (num>0)
+            {
+                r=num%10;
+                newNum=newNum*10+r
+                num=Math.trunc(num/10)
+            }
+            obj.new.value=newNum
+        }
+    </script>
+    <script language="JavaScript">
+        function lucky(obj) {
+            var sum1=0, sum2=0, k=0
+            obj.area.value=" "
+            for (var i1=0;i1<10;i1++)
+            {
+                for (var i2=0;i2<10;i2++)
+                {
+                    for (var i3=0;i3<10;i3++)
+                    {
+                        for (var i4=0;i4<10;i4++)
+                        {
+                            for (var i5=0;i5<10;i5++)
+                            {
+                                for (var i6=0;i6<10;i6++)
+                                {
+                                    if (i1+i2+i3==i4+i5+i6) k++
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            obj.area.value="Кількість " + k
+        }
+    </script>
+    <script>
+        function divisions(obj) {
+            var num = obj.number.value
+            var s = ""
+            for (var i=1; i<=Math.trunc(Math.sqrt(num));i++)
+            {
+                if (num % i == 0 && i*i!=num)
+                    s=s+i+" "+ num/i+" "
+                if (num % i == 0 && i*i==num)
+                    s=s+i+" "
+            }
+            obj.area.value=s
+        }
+    </script>
+</head>
+<body>
+<h3>2. Написати рограму, яка "перевертає" задане натуральне число</h3>
+<form name="form1">
+Enter number: <input type="text" name="number" size="5"> <br>
+    <input type="button" value="Перевернути" onclick="turn(form1)"><br>
+    New number: <input type="text" name="new" size="5"><br>
+</form>
+<h3>3. Написати сценарій визначення кількості "щасливих" шестизначних
+    автобусних квитків (в номерах яких сума перших трьох цифр дорівнює сумі
+    трьох останніх)</h3>
+<form name="form2">
+    <input type="button" value="Визначити" onclick="lucky(form2)"><br>
+    Відповідь: <textarea name="area" cols=30 rows=2> </textarea><br>
+</form>
+<h3>4. Написати програму, що визначає всі дільники заданого натурального
+    числа</h3>
+<form name="form3">
+    Введіть число: <input type="text" name="number" size="5"> <br>
+    <input type="button" value="Визначити" onclick="divisions(form3)"><br>
+    Відповідь: <textarea name="area" cols=30 rows=2> </textarea><br>
+</form>
+</body>
+</html>

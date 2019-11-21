@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Part11</title>
+    <script>
+        function mult(){
+            img_array = new Array()
+            for (var i=0; i<4; i++)
+                img_array[i] = new Image(50,200)
+            img_array[0].src = "e1.jpg"
+            img_array[1].src = "e2.jpg"
+            img_array[2].src = "e3.jpg"
+            img_array[3].src = "e4.jpg"
+            var t=new Date()
+            p=-1
+        }
+        function s(){
+            p=p+1
+            document.images[0].src =img_array[p].src
+            setTimeout("s()",100)
+            if (p==3) p=-1
+        }
+    </script>
+</head>
+<body onload="mult()">
+<h3>2. Створити мультиплікацію з використанням масива</h3>
+<input type="button" name="But" value="Подивитись" onClick="s()"> <a href="tasks2.html">Завдання 3,4</a> <br><br><br>
+<img src="e1.jpg">
+</body>
+</html>
